@@ -1,0 +1,18 @@
+
+
+version: 2
+
+sources:
+    - name: gold_kpi_model
+      database: dbt_test
+      schema: kpi_schema
+      tables:
+        - name: customer
+          columns:
+            - name: c_custkey
+              description: "The primary key for this table"
+              tests:
+                  - unique
+                  - not_null
+
+    
